@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" fill="none">
+  <rect width="1280" height="720" rx="40" fill="#07111D" />
+  <rect x="28" y="28" width="1224" height="664" rx="32" stroke="#6EA8FF" stroke-opacity=".35" stroke-width="4" />
+  <circle cx="170" cy="160" r="170" fill="url(#glowA)" />
+  <circle cx="1060" cy="540" r="220" fill="url(#glowB)" />
+  <circle cx="258" cy="454" r="6" fill="#A8D3FF" />
+  <circle cx="302" cy="422" r="4" fill="#8DE0FF" />
+  <circle cx="356" cy="478" r="5" fill="#C7D7FF" />
+  <circle cx="918" cy="250" r="6" fill="#A8D3FF" />
+  <circle cx="972" cy="290" r="4" fill="#8DE0FF" />
+  <circle cx="1014" cy="232" r="5" fill="#C7D7FF" />
+  <text
+    x="96"
+    y="534"
+    fill="#A9B9D3"
+    font-family="Arial, sans-serif"
+    font-size="34"
+    font-weight="700"
+    letter-spacing="10"
+  >
+    PARTICLE CLIP 1
+  </text>
+  <text
+    x="96"
+    y="600"
+    fill="#F2F7FF"
+    font-family="Arial, sans-serif"
+    font-size="72"
+    font-weight="800"
+  >
+    Standalone Particle Showcase
+  </text>
+  <defs>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientTransform="translate(170 160) rotate(90) scale(170)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6EA8FF" stop-opacity=".22" />
+      <stop offset="1" stop-color="#6EA8FF" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientTransform="translate(1060 540) rotate(90) scale(220)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#79D8FF" stop-opacity=".18" />
+      <stop offset="1" stop-color="#79D8FF" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+</svg>

@@ -6,6 +6,7 @@ export function MusicDock() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMissing, setIsMissing] = useState(false);
+  const [autoplayBlocked, setAutoplayBlocked] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -15,7 +16,19 @@ export function MusicDock() {
     audio.volume = 0.28;
     audio.preload = "auto";
 
-    const handlePlay = () => setIsPlaying(true);
+    const tryPlay = async () => {
+      try {
+        await audio.play();
+        if (active) setAutoplayBlocked(false);
+      } catch {
+        if (active) setAutoplayBlocked(true);
+      }
+    };
+
+    const handlePlay = () => {
+      setIsPlaying(true);
+      setAutoplayBlocked(false);
+    };
     const handlePause = () => setIsPlaying(false);
     const handleError = () => {
       setIsMissing(true);
@@ -25,18 +38,30 @@ export function MusicDock() {
     audio.addEventListener("play", handlePlay);
     audio.addEventListener("pause", handlePause);
     audio.addEventListener("error", handleError);
+    audio.addEventListener("canplay", tryPlay);
 
-    // Play when intro finishes
     const onIntroDone = () => {
-      void audio.play().catch(() => {});
+      void tryPlay();
     };
     window.addEventListener("intro:done", onIntroDone);
 
-    // Also try on first pointer interaction as fallback
     const onFirstGesture = () => {
-      void audio.play().catch(() => {});
+      void tryPlay();
     };
     window.addEventListener("pointerdown", onFirstGesture, { once: true });
+
+    const onFirstKeydown = () => {
+      void tryPlay();
+    };
+    window.addEventListener("keydown", onFirstKeydown, { once: true });
+
+    const onFocus = () => {
+      if (!audio.paused) return;
+      void tryPlay();
+    };
+    window.addEventListener("focus", onFocus);
+
+    void tryPlay();
 
     void fetch(TRACK_SRC, { method: "HEAD" })
       .then((res) => {
@@ -51,8 +76,11 @@ export function MusicDock() {
       audio.removeEventListener("play", handlePlay);
       audio.removeEventListener("pause", handlePause);
       audio.removeEventListener("error", handleError);
+      audio.removeEventListener("canplay", tryPlay);
       window.removeEventListener("intro:done", onIntroDone);
       window.removeEventListener("pointerdown", onFirstGesture);
+      window.removeEventListener("keydown", onFirstKeydown);
+      window.removeEventListener("focus", onFocus);
     };
   }, []);
 
@@ -74,7 +102,7 @@ export function MusicDock() {
     <aside
       className={`music-dock glass-panel${isMissing ? " music-dock--missing" : ""}`}
     >
-      <audio ref={audioRef} src={TRACK_SRC} loop preload="auto" />
+      <audio ref={audioRef} src={TRACK_SRC} loop preload="auto" autoPlay />
       <button
         type="button"
         className="music-dock__toggle"
@@ -91,7 +119,9 @@ export function MusicDock() {
             ? "Add /public/audio/aces-slowed-lofi.mp3"
             : isPlaying
               ? "Ambient track playing"
-              : "Waiting for intro..."}
+              : autoplayBlocked
+                ? "Browser blocked autoplay, click play"
+                : "Trying to autoplay..."}
         </span>
       </div>
     </aside>

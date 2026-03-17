@@ -93,7 +93,7 @@ export const showcaseReels: ShowcaseReel[] = [
     title: "Bloodlust SMP particle systems and event-ready visual effects.",
     description:
       "Real particle work shipped for SMP use cases: trails, aura loops, event visuals, and combat feedback tuned for live gameplay and clear readability.",
-    video: "/videos/particle-example-1.mp4",
+    video: "/videos/12341.mov",
     poster: "/videos/particle-example-1.jpg",
     accent: "ice",
     stats: [
@@ -131,9 +131,9 @@ export const showcaseReels: ShowcaseReel[] = [
 
 export const particleExamples: ParticleExample[] = [
   {
-    title: "Bloodlust SMP",
-    video: "/videos/particle-example-1.mp4",
-    poster: "/videos/particle-example-1.jpg",
+    title: "Standalone Particle Showcase",
+    video: "/videos/particle-clip-1.mp4",
+    poster: "/videos/particle-clip-1-poster.svg",
   },
   {
     title: "Event Particle Systems",
