@@ -74,8 +74,8 @@ export const showcaseReels: ShowcaseReel[] = [
     kicker: "Just saw workflow",
     title: "Professional SMP plugins and high quality results",
     description: "",
-    video: "/videos/coding-reel.mp4",
-    poster: "/videos/coding-reel-poster.jpg",
+    video: "videos/coding-reel.mp4",
+    poster: "videos/coding-reel-poster.jpg",
     accent: "steel",
     stats: [
       "Professional plugin developer",
@@ -93,8 +93,8 @@ export const showcaseReels: ShowcaseReel[] = [
     title: "Bloodlust SMP particle systems and event-ready visual effects.",
     description:
       "Real particle work shipped for SMP use cases: trails, aura loops, event visuals, and combat feedback tuned for live gameplay and clear readability.",
-    video: "/videos/12341.mov",
-    poster: "/videos/particle-example-1.jpg",
+    video: "videos/12341.mov",
+    poster: "videos/particle-example-1.jpg",
     accent: "ice",
     stats: [
       "Bloodlust SMP",
@@ -113,8 +113,8 @@ export const showcaseReels: ShowcaseReel[] = [
     title: "Live SMP client collaborations and production plugin delivery.",
     description:
       "Real collaboration work across SMP servers with ongoing support, updates, and high-quality feature delivery.",
-    video: "/videos/client-reel.mp4",
-    poster: "/videos/client-reel-poster.jpg",
+    video: "videos/client-reel.mp4",
+    poster: "videos/client-reel-poster.jpg",
     accent: "signal",
     stats: [
       "Bloodlust active",
@@ -132,28 +132,28 @@ export const showcaseReels: ShowcaseReel[] = [
 export const particleExamples: ParticleExample[] = [
   {
     title: "Standalone Particle Showcase",
-    video: "/videos/particle-clip-1.mp4",
-    poster: "/videos/particle-clip-1-poster.svg",
+    video: "videos/particle-clip-1.mp4",
+    poster: "videos/particle-clip-1-poster.svg",
   },
   {
     title: "Event Particle Systems",
-    video: "/videos/particle-example-2.mp4",
-    poster: "/videos/particle-example-2.jpg",
+    video: "videos/particle-example-2.mp4",
+    poster: "videos/particle-example-2.jpg",
   },
   {
     title: "Celestial SMP",
-    video: "/videos/particle-example-3.mp4",
-    poster: "/videos/particle-example-3.jpg",
+    video: "videos/particle-example-3.mp4",
+    poster: "videos/particle-example-3.jpg",
   },
   {
     title: "Complex Particles and block displays",
-    video: "/videos/particle-example-4.mp4",
-    poster: "/videos/particle-example-4.jpg",
+    video: "videos/particle-example-4.mp4",
+    poster: "videos/particle-example-4.jpg",
   },
   {
     title: "Ring SMP showcase",
-    video: "/videos/particle-example-5.mp4",
-    poster: "/videos/particle-example-5.jpg",
+    video: "videos/particle-example-5.mp4",
+    poster: "videos/particle-example-5.jpg",
   },
 ];
 
@@ -215,21 +215,21 @@ export const motionGallery: MotionGalleryItem[] = [
     title: "Trail playground",
     caption:
       "Orbit rings, aura pulses, and rank cosmetics staged for player-facing wow moments.",
-    src: "/videos/particle-example-1.jpg",
+    src: "videos/particle-example-1.jpg",
     alt: "Minecraft particle plugin showcase poster",
   },
   {
     title: "Java build pass",
     caption:
       "Code structure, command layers, listeners, and deployment-safe plugin organization.",
-    src: "/videos/coding-reel-poster.jpg",
+    src: "videos/coding-reel-poster.jpg",
     alt: "Java plugin code poster",
   },
   {
     title: "Ops bridge",
     caption:
       "Client tooling, Discord relays, dashboards, and staff-side automation hooks.",
-    src: "/videos/client-reel-poster.jpg",
+    src: "videos/client-reel-poster.jpg",
     alt: "Client operations plugin poster",
   },
 ];
@@ -307,19 +307,19 @@ export const featuredTeams: FeaturedTeam[] = [
     name: "Mastery SMP",
     role: "Currently working with",
     description: "Feature delivery, plugin support, and live SMP systems.",
-    logo: "/logos/mastery-smp.webp",
+    logo: "logos/mastery-smp.webp",
   },
   {
     name: "Celestial SMP",
     role: "Owner and developer",
     description: "Primary SMP project, events, and long-term plugin direction.",
-    logo: "/logos/celestial-smp.webp",
+    logo: "logos/celestial-smp.webp",
   },
   {
     name: "Curse SMP",
     role: "Developer",
     description: "Team-side plugin development and production rollout support.",
-    logo: "/logos/curse-smp.webp",
+    logo: "logos/curse-smp.webp",
   },
 ];
 

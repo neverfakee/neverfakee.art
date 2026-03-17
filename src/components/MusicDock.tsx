@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const TRACK_SRC = "/audio/aces-slowed-lofi.mp3";
+const TRACK_SRC = "audio/aces-slowed-lofi.mp3";
 
 export function MusicDock() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
